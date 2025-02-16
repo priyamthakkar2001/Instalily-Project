@@ -128,18 +128,49 @@ Note: We recommend using the manual lookup and parts search features as they are
 
 ## 🔧 Configuration
 
-### Backend Configuration (.env)
-```
-OPENAI_API_KEY=your_api_key_here
-CACHE_MODE=memory  # Options: memory, disk, none
-CRAWLER_HEADLESS=true
+### Environment Setup
+
+1. Create a `.env` file in the `server-python` directory:
+```bash
+cd server-python
+touch .env
 ```
 
-### Frontend Configuration
-Edit `src/config.js` to modify:
-- API endpoint
-- Typing simulation settings
-- UI customization
+2. Add the following environment variables to `server-python/.env`:
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+### Backend Setup
+
+1. Create and activate Python virtual environment:
+```bash
+cd server-python
+python -m venv venv
+source venv/bin/activate  # On Windows use: .\venv\Scripts\activate
+```
+
+2. Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Start the FastAPI server:
+```bash
+uvicorn main:app --reload
+```
+
+### Frontend Setup
+
+1. Install Node.js dependencies:
+```bash
+npm install
+```
+
+2. Start the React development server:
+```bash
+npm start
+```
 
 ## 🧪 Testing
 
