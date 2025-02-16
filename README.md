@@ -69,12 +69,12 @@ The system uses a multi-agent architecture:
 - Node.js 14+
 - OpenAI API key
 
-### Installation
+### Installation & Setup
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd case-study-main
+git clone https://github.com/priyamthakkar2001/Instalily-Project.git
+cd Instalily-Project
 ```
 
 2. Set up the Python backend:
@@ -85,10 +85,14 @@ source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
+3. Configure environment variables:
 ```bash
-cp .env.example .env
-# Edit .env and add your OpenAI API key
+# In the server-python directory
+touch .env
+```
+Add the following to `server-python/.env`:
+```env
+OPENAI_API_KEY=your_openai_api_key
 ```
 
 4. Set up the React frontend:
@@ -103,7 +107,7 @@ npm install
 ```bash
 cd server-python
 source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-python main.py
+uvicorn main:app --reload
 ```
 
 2. Start the frontend development server:
@@ -126,52 +130,6 @@ npm start
 
 Note: We recommend using the manual lookup and parts search features as they are fully implemented and tested.
 
-## 🔧 Configuration
-
-### Environment Setup
-
-1. Create a `.env` file in the `server-python` directory:
-```bash
-cd server-python
-touch .env
-```
-
-2. Add the following environment variables to `server-python/.env`:
-```env
-OPENAI_API_KEY=your_openai_api_key
-```
-
-### Backend Setup
-
-1. Create and activate Python virtual environment:
-```bash
-cd server-python
-python -m venv venv
-source venv/bin/activate  # On Windows use: .\venv\Scripts\activate
-```
-
-2. Install Python dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-3. Start the FastAPI server:
-```bash
-uvicorn main:app --reload
-```
-
-### Frontend Setup
-
-1. Install Node.js dependencies:
-```bash
-npm install
-```
-
-2. Start the React development server:
-```bash
-npm start
-```
-
 ## 🧪 Testing
 
 ### Backend Tests
@@ -183,4 +141,3 @@ pytest
 ### Frontend Tests
 ```bash
 npm test
-```
