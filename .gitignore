@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Server Python specific
+server-python/env/
+server-python/venv/
+server-python/.env
+server-python/ENV/
+server-python/__pycache__/
+server-python/**/__pycache__/
+
+# Node/React
+node_modules/
+/build
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Project specific
+server-python/logs/
+.cache/
+.webcache/
+
+# Testing and coverage
+coverage/
+htmlcov/
+.coverage.*
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
